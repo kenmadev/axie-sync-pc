@@ -1,0 +1,18 @@
+{
+  "appId": "com.axiesyncpc",
+  "productName": "Axie Sync PC",
+  "copyright": "Kenma Labs",
+  "directories": {
+    "app": ".",
+    "output": "out",
+    "buildResources": "build-res"
+  },
+  "files": [
+    "package.json",
+    "app/**/*",
+    "node_modules"
+  ],
+  "win": {
+    "target": "nsis"
+  }
+}

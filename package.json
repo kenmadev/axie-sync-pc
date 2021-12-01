@@ -1,0 +1,64 @@
+{
+  "name": "axie-sync-pc",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Kenma Labs",
+  "description": "Axie sync for PC",
+  "dependencies": {
+    "appdata-path": "^1.0.0",
+    "auto-launch": "^5.0.5",
+    "axios": "^0.24.0",
+    "chokidar": "^3.5.2",
+    "electron-store": "^8.0.1",
+    "jsonfile": "^6.1.0",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "retry-axios": "^2.6.0",
+    "styled-components": "^5.3.3",
+    "web-vitals": "^1.0.1"
+  },
+  "homepage": "./",
+  "main": "public/electron.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "electron": "cross-env NODE_ENV=dev electron .",
+    "pack": "electron-builder -w",
+    "prepack": "yarn build",
+    "postpack": "electron-builder install-app-deps"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "cross-env": "^7.0.3",
+    "electron": "^16.0.2",
+    "electron-builder": "^22.14.5"
+  }
+}
