@@ -6,6 +6,11 @@ const isEmpty = require('lodash/isEmpty');
 const { useAxios } = require('./utils');
 const { REMOTEAPI, AXIECACHEPATH } = require('./config');
 
+const BATTLETYPES = {
+  pvpbattle: 1,
+  pvebattle: 2,
+};
+
 const syncBattle = async path => {
   try {
     // read the first item on the list and sync it
@@ -15,6 +20,10 @@ const syncBattle = async path => {
     if (isEmpty(battle)) {
       throw new Error('Battle data is empty');
     }
+
+    // only record pvp battles
+    const { battleType = 0 } = battle;
+    if (battleType !== BATTLETYPES.pvpbattle) return;
 
     // sync to server
     await useAxios({ timeout: 60000 }).post(`${REMOTEAPI}/battles`, {
